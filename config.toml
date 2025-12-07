@@ -1,0 +1,39 @@
+# 图片代码配置文件
+
+# 输入输出路径
+[paths]
+input_dir = "./input"
+output_dir = "./output"
+#支持的图片格式
+supported_formats = ["jpg", "jpeg", "png", "bmp", "gif"]
+
+#打码参数
+[mosaic]
+#马赛克块大小(像素)
+block_size = 20
+# 模糊强度(1-10)
+blur_strength = 8
+
+#打码区域
+# 正数：从左上角(0,0)开始计算
+# 负数：从右下角开始计算
+[[regions]]
+name = "区域1"
+x = 100      # 左上角x坐标
+y = 100      # 左上角y坐标
+width = 200  # 宽度
+height = 150 # 高度
+
+[[regions]]
+name = "区域2"
+x = -300     # 从右边界往左300像素
+y = -200     # 从下边界往上200像素
+width = 250
+height = 180
+
+[[regions]]
+name = "区域3"
+x = 50
+y = -100     # 混合使用：x从左边，y从底部
+width = 100
+height = 100
